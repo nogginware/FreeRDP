@@ -17,9 +17,41 @@
  * limitations under the License.
  */
 
+#include "mf_interface.h"
+
 #import <Cocoa/Cocoa.h>
 
 int main(int argc, char* argv[])
 {
 	return NSApplicationMain(argc, (const char**) argv);
+}
+
+int freerdp_client_global_init()
+{
+	return 0;
+}
+
+int freerdp_client_global_uninit()
+{
+	return 0;
+}
+
+int freerdp_client_start(cfInfo* cfi)
+{
+	return 0;
+}
+
+int freerdp_client_stop(cfInfo* cfi)
+{
+	return 0;
+}
+
+cfInfo* freerdp_client_new(int argc, char** argv)
+{
+	return 0;
+}
+
+void freerdp_client_free(cfInfo* cfi)
+{
+
 }
