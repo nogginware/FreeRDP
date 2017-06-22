@@ -601,6 +601,45 @@ DWORD GetVirtualScanCodeFromVirtualKeyCode(DWORD vkcode, DWORD dwKeyboardType)
 	if ((dwKeyboardType != 4) && (dwKeyboardType != 7))
 		dwKeyboardType = 4;
 
+	if (vkcode & KBDEXT)
+	{
+		switch (codeIndex)
+		{
+			case VK_NUMPAD0:
+				codeIndex = VK_INSERT;
+				break;
+			case VK_NUMPAD1:
+				codeIndex = VK_END;
+				break;
+			case VK_NUMPAD2:
+				codeIndex = VK_DOWN;
+				break;
+			case VK_NUMPAD3:
+				codeIndex = VK_NEXT;
+				break;
+			case VK_NUMPAD4:
+				codeIndex = VK_LEFT;
+				break;
+			case VK_NUMPAD6:
+				codeIndex = VK_RIGHT;
+				break;
+			case VK_NUMPAD7:
+				codeIndex = VK_HOME;
+				break;
+			case VK_NUMPAD8:
+				codeIndex = VK_UP;
+				break;
+			case VK_NUMPAD9:
+				codeIndex = VK_PRIOR;
+				break;
+			case VK_DECIMAL:
+				codeIndex = VK_DELETE;
+				break;
+			default:
+				break;
+		}
+	}
+
 	if (dwKeyboardType == 4)
 	{
 		if (vkcode & KBDEXT)
